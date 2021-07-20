@@ -3,6 +3,7 @@
 Created by [Scott Ryan](https://github.com/scott-a-code) & [Daniel Cooper](https://github.com/danjcooper)
 Inspired by [telegra.ph](https://telegra.ph/)
 
+- [Thoughts](#thoughts)
   - [Installation & Usage](#installation--usage)
   - [Technologies used.](#technologies-used)
     - [Front End](#front-end)
@@ -15,7 +16,6 @@ Inspired by [telegra.ph](https://telegra.ph/)
 
 - Clone / download this repo.
 - In your terminal navigate to `cd thoughts`
-  
 - To start enter `` into your terminal.
 - Open the client `./client/index.html`
 - The api will now be serving at `https://localhost:3000`
@@ -42,15 +42,18 @@ Inspired by [telegra.ph](https://telegra.ph/)
 
 Our data is stored in in a relational database with the below schema.
 
-| Schema | example | restrictions |
-| ------ | ------- | ------------ |
-| test   | test    | test         |
+| Name      | Type    | notes              |
+| --------- | ------- | ------------------ |
+| ID        | Serial  | Primary Key        |
+| Title     | Varchar | Max 100 characters |
+| Pseudonym | Varchar | Max 100 characters |
+| body      | Varchar | Max 500 characters |
 
 ## Routes
 
 Our app uses the below restful routes
 
-| Method | Endpoint | Info |
-| ------ | -------- | ---- |
-| test   | test     | test |
-
+| Method | Endpoint   | Info                             |
+| ------ | ---------- | -------------------------------- |
+| POST   | /posts/new | Adds a new entry to the database |
+| GET    | /posts/:id | gets a post by id                |
