@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
+main {
+  border: 30px solid black;
+
+  width: 550px;
+  height: 550px;
+  margin: auto auto;
+
+  padding: 35px;
+
+  border-radius: 35px;
+}
+main input {
+  display: block;
+  width: 100%;
+  height: 50px;
+
+  margin: 20px 0;
+
+  border: none;
+  outline: none;
+  font-family: "Inconsolata", monospace;
+  font-weight: 600;
+  font-size: 50px;
+}
+main textarea {
+  width: 100%;
+  height: 175px;
+  border: none;
+  resize: none;
+  outline: none;
+  font-size: 16px;
+}
+main input[type="submit"] {
+  height: 65px;
+  background-color: white;
+  border: 10px solid black;
+  font-size: 35px;
+
+  border-radius: 35px;
+}
+main input[type="submit"]:hover {
+  height: 65px;
+  color: white;
+  background-color: black;
+  border: 10px solid black;
+  cursor: pointer;
+}
+main input#pseudonym {
+  margin-top: 0;
+  font-size: 20px;
+}

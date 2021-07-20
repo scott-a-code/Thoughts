@@ -1,6 +1,7 @@
 # Thoughts
 
 Created by [Scott Ryan](https://github.com/scott-a-code) & [Daniel Cooper](https://github.com/danjcooper)
+Inspired by [telegra.ph](https://telegra.ph/)
 
   - [Installation & Usage](#installation--usage)
   - [Technologies used.](#technologies-used)
