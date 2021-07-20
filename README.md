@@ -1,6 +1,6 @@
 # Thoughts
 
-Created by [Scott Ryan](https://github.com/scott-a-code) [Daniel Cooper](https://github.com/danjcooper)
+Created by [Scott Ryan](https://github.com/scott-a-code) & [Daniel Cooper](https://github.com/danjcooper)
 
   - [Installation & Usage](#installation--usage)
   - [Technologies used.](#technologies-used)
