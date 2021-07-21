@@ -29,12 +29,16 @@ form.addEventListener("submit", async (e) => {
 
     // TODO This should return the id of the newly recrated object.
     const response = await fetch("http://localhost:3000/posts/new", options);
-    const responseText = await response.text();
-    console.log(responseText);
+
+    const responseText = await response.json();
+    console.log(responseText.id);
+    // const link = `/posts/${response.id}`
+
     const link = document.createElement("a");
     link.textContent = "view your post here"
     link.href = `/getposts/?id=${responseText}`
     link.classList.add("link-to-post");
+
     
     // TODO Render the ID for the user.
     transformDown()
