@@ -3,7 +3,8 @@
 Created by [Scott Ryan](https://github.com/scott-a-code) & [Daniel Cooper](https://github.com/danjcooper)
 Inspired by [telegra.ph](https://telegra.ph/)
 
-- [Thoughts](#thoughts)
+
+  - [Notes](#notes)
   - [Installation & Usage](#installation--usage)
   - [Technologies used.](#technologies-used)
     - [Front End](#front-end)
@@ -12,7 +13,8 @@ Inspired by [telegra.ph](https://telegra.ph/)
   - [Data Storage](#data-storage)
   - [Routes](#routes)
 
-
+## Notes
+- The route to view the past posts isn't finished yet.
 
 ## Installation & Usage
 

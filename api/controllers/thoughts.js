@@ -5,6 +5,7 @@ const router = express.Router();
 const api = require("../server.js");
 
 router.get("/:id", (req, res) => {
+    // TODO Add the route to handle get request by id.
   res.send("Hello");
 });
 
