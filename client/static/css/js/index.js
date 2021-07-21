@@ -67,3 +67,4 @@ function transformUp(link) {
     target.style.alignItems = "center";
     target.style.justifyContent = "center";
 };
+

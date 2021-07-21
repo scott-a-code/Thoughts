@@ -14,6 +14,7 @@ Inspired by [telegra.ph](https://telegra.ph/)
   - [Routes](#routes)
 
 ## Notes
+
 - The route to view the past posts isn't finished yet.
 
 ## Installation & Usage

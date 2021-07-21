@@ -1,12 +1,17 @@
 const express = require("express");
 const Thoughts = require("../models/thoughts.js");
+const { response } = require("../server.js");
 const router = express.Router();
 
 const api = require("../server.js");
 
-router.get("/:id", (req, res) => {
-    // TODO Add the route to handle get request by id.
-  res.send("Hello");
+router.get("/:id", async (req, res) => {
+  try {
+      const response = await Thoughts.findPostById(req.params.id);
+      res.status(200).send(response);
+  } catch (error) {
+      res.status(500).send(error)
+  }
 });
 
 router.post("/new", async (req, res) => {
