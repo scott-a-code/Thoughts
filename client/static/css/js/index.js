@@ -31,11 +31,15 @@ form.addEventListener("submit", async (e) => {
     const response = await fetch("http://localhost:3000/posts/new", options);
     const responseText = await response.text();
     console.log(responseText);
-    const link = `/posts/${responseText}`
+    const link = document.createElement("a");
+    link.textContent = "view your post here"
+    link.href = `/getposts/?id=${responseText}`
+    link.classList.add("link-to-post");
     
     // TODO Render the ID for the user.
     transformDown()
     setTimeout(() => {transformUp(link)}, 3000)
+    setTimeout(() => {document.querySelector("main").append(link)}, 6000)
     // transformUp('link')
 
 });
@@ -63,7 +67,7 @@ function transformUp(link) {
     target.style.display= "flex";
     target.style.alignItems = "center";
     target.style.justifyContent = "center";
-    setTimeout(() => {target.innerHTML = link}, 3000)
+    
     
     
 }

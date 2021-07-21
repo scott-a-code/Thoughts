@@ -71,3 +71,11 @@ main input#pseudonym {
   justify-content: center;
   align-items: center;
 }
+
+.link-to-post {
+  text-decoration: none;
+  font-family: "Inconsolata", monospace;
+  font-weight: 600;
+  font-size: 35px;
+  color: black;
+}

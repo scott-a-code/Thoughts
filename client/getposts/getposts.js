@@ -11,8 +11,8 @@ function getRequestedID() {
     const id = queryString.replace("?id=", '');
 
     console.log(id);
-    getPostFromServer(id)
-}
+    getPostFromServer(id);
+};
 
 
 async function getPostFromServer(id) {
@@ -24,6 +24,6 @@ async function getPostFromServer(id) {
     document.getElementById("title").textContent = responseJson.title;
     document.getElementById("pseudonym").textContent = responseJson.pseudonym;
     document.getElementById("body").textContent = responseJson.body;
-}
+};
 
-getRequestedID()
+getRequestedID();
