@@ -20,7 +20,6 @@ main {
   border-radius: 35px;
 
   transition: 3s;
-  transition-timing-function: ease;
 }
 main input {
   display: block;

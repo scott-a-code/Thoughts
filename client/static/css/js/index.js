@@ -1,5 +1,3 @@
-console.log("hey");
-
 const form = document.querySelector("form");
 
 form.addEventListener("submit", async (e) => {
@@ -32,20 +30,18 @@ form.addEventListener("submit", async (e) => {
 
     const responseText = await response.json();
     console.log(responseText.id);
-    // const link = `/posts/${response.id}`
+
 
     const link = document.createElement("a");
     link.textContent = "view your post here"
-    link.href = `/getposts/?id=${responseText}`
+    link.href = `/getposts/?id=${responseText.id}`
     link.classList.add("link-to-post");
 
     
     // TODO Render the ID for the user.
     transformDown()
-    setTimeout(() => {transformUp(link)}, 3000)
-    setTimeout(() => {document.querySelector("main").append(link)}, 6000)
-    // transformUp('link')
-
+    setTimeout(() => {transformUp(link)}, 3000);
+    setTimeout(() => {document.querySelector("main").append(link)}, 6000);
 });
 
 
@@ -58,20 +54,16 @@ function transformDown() {
     target.style.height = "0";
     target.style.padding = "0";
     
-}
+};
 
 function transformUp(link) {
     const target = document.querySelector("main");
     
     // this could be refactored to add a class.
-    // target.classList.add("transformUp")
     target.style.width = "550px";
     target.style.height = "550px";
     target.style.padding = "35px";
     target.style.display= "flex";
     target.style.alignItems = "center";
     target.style.justifyContent = "center";
-    
-    
-    
-}
+};
