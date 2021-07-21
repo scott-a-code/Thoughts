@@ -14,11 +14,19 @@ async function getPostFromServer(id) {
     const response = await fetch(`http://localhost:3000/posts/${id}`)
     const responseJson = await response.json();
 
+    console.log(responseJson);
     // Update the dom.
 
-    document.getElementById("title").textContent = responseJson.title;
-    document.getElementById("pseudonym").textContent = responseJson.pseudonym;
-    document.getElementById("body").textContent = responseJson.body;
+    if (responseJson.length === 0) {
+        document.getElementById("title").textContent = "404 - not found.";
+        document.getElementById("pseudonym").textContent = "Your story is waiting to be told. We can\'t wait to hear it.";
+    } else {
+        document.getElementById("title").textContent = responseJson[0].title;
+        document.getElementById("pseudonym").textContent = responseJson[0].pseudonym;
+        document.getElementById("body").textContent = responseJson[0].body;
+    }
+
+    
 };
 
 getRequestedID();
