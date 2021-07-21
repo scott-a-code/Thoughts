@@ -4,10 +4,10 @@ class Thoughts {
     constructor(data){
         this.postTitle = data.postTitle;
         this.pseudonym = data.pseudonym;
-        this.postBody = data.postBody;
+        this.body = data.body;
     }
 
-    findPostById(id){
+    static findPostById(id){
         return new Promise (async (resolve, reject) => {
             try {
                 let thoughData = await db.query(`SELECT * FROM thoughts WHERE id = $1;`, [id]);
@@ -19,18 +19,19 @@ class Thoughts {
         });
     }
 
-    create(title, pseudonym, post_body) {
-        return new Promise (async(resolve, reject) => {
+    static create(title, pseudonym, body) {
+        return new Promise (async (resolve, reject) => {
             try {
-                let thoughtPost = await db.query(`INSERT INTO thoughts (title, pseudonym, post_body) VALUES ($1, $2, $3) RETURNING *;`, [id, title, pseudonym, post_body]);
-                let newThought = new Thoughts(thoughtPost.rows[0]);
-                resolve(newThought);
+                console.log('attempting to post to server')
+                let thoughtPost = await db.query(`INSERT INTO thoughts (title, pseudonym, body) VALUES ($1, $2, $3) RETURNING *;`, [title, pseudonym, body]);
+                // let newThought = new Thoughts(thoughtPost.rows[0]);
+                console.log('posted to server')
+                resolve(thoughtPost);
             } catch (err) {
                 reject('Something went wrong, could not create though post :-(')
             }
         });
     }
 };
-
 
 module.exports = Thoughts;

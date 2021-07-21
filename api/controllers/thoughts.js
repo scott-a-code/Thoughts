@@ -1,20 +1,31 @@
 const express = require('express');
+const Thoughts = require('../models/thoughts.js');
 const router = express.Router();
 
-const Thought = require('../models/Thoughts.js');
 const api = require('../server.js');
 
 router.get('/:id', (req, res) => {
     res.send('Hello');
 })
 
-router.post('/new', (req, res) => {
-    // store req body
-    // create new post using model
-    // return id
+router.post('/new', async (req, res) => {
+    try{
+        // store req body
+        // req.body is the object it's receiving
+        let postBody = req.body;
+        console.log(postBody);
+        // // create new post using model
+        let sendingPostToBeCreatedInServer = await Thoughts.create(req.body.title, req.body.pseudonym, req.body.body);
+        console.log(sendingPostToBeCreatedInServer);
+        
+        // let retreivingSamePostWithID = sendingPostToBeCreatedInServer.Result.rows[0].id;
+        // console.log(retreivingSamePostWithID)
+        // return id
 
-
-    res.send('Hello');
+        res.send(sendingPostToBeCreatedInServer.rows[0]);
+    } catch(err) {
+        res.status(422).send(err);
+    }
 })
 
 module.exports = router;
