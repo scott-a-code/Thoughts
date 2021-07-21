@@ -31,18 +31,19 @@ form.addEventListener("submit", async (e) => {
     const response = await fetch("http://localhost:3000/posts/new", options);
     const responseText = await response.text();
     console.log(responseText);
-    // const link = `/posts/${response.id}`
+    const link = `/posts/${responseText}`
     
     // TODO Render the ID for the user.
     transformDown()
-    setTimeout(() => {transformUp('link')}, 3000)
+    setTimeout(() => {transformUp(link)}, 3000)
     // transformUp('link')
 
 });
 
+
+
 function transformDown() {
     const target = document.querySelector("main");
-    
     
     target.innerHTML = ''
     target.style.width = "0";
@@ -50,13 +51,19 @@ function transformDown() {
     target.style.padding = "0";
     
 }
+
 function transformUp(link) {
     const target = document.querySelector("main");
     
-    
-    target.innerHTML = 'link'
+    // this could be refactored to add a class.
+    // target.classList.add("transformUp")
     target.style.width = "550px";
     target.style.height = "550px";
     target.style.padding = "35px";
+    target.style.display= "flex";
+    target.style.alignItems = "center";
+    target.style.justifyContent = "center";
+    setTimeout(() => {target.innerHTML = link}, 3000)
+    
     
 }

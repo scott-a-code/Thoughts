@@ -62,3 +62,12 @@ main input#pseudonym {
   margin-top: 0;
   font-size: 20px;
 }
+
+.transformUp {
+  width: 550px;
+  height: 550px;
+  padding: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
