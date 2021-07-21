@@ -2,8 +2,18 @@ const express = require('express');
 const router = express.Router();
 
 const Thought = require('../models/Thoughts.js');
+const api = require('../server.js');
 
 router.get('/:id', (req, res) => {
+    res.send('Hello');
+})
+
+router.post('/new', (req, res) => {
+    // store req body
+    // create new post using model
+    // return id
+
+
     res.send('Hello');
 })
 

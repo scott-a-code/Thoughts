@@ -9,4 +9,3 @@ const thoughtsRoute = require('./controllers/thoughts');
 api.use('/posts', thoughtsRoute);
 
 module.exports = api;
-

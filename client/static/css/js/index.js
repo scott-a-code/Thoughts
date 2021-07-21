@@ -18,19 +18,19 @@ form.addEventListener("submit", async (e) => {
         }
     }
 
-    // const options = {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //         'Content-Length': data.length,
-    //     },
-    //     body: JSON.stringify(output)
-    // }
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(output)
+    }
     
 
-    // // TODO This should return the id of the newly recrated object.
-    // const response = fetch("localhost:3000/posts/new", options);
-
+    // TODO This should return the id of the newly recrated object.
+    const response = await fetch("http://localhost:3000/posts/new", options);
+    const responseText = await response.text();
+    console.log(responseText);
     // const link = `/posts/${response.id}`
     
     // TODO Render the ID for the user.
